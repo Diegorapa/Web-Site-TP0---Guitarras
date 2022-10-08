@@ -1,0 +1,345 @@
+/*  Grid productos */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-items: center;
+    gap: 80px 5px;
+    padding: 10px;
+    background-color: transparent;
+    /* border: 2px solid blue; */
+}
+
+.grid-item {
+    /* height: auto; */
+    background-color: rgba(44, 43, 43, 0.925);
+    /* border: 2px solid black; */
+    border-radius: 30px;
+    text-align: center;
+    text-justify: auto;
+    font-family: 'Rock Salt', cursive;
+    color: white;
+    max-width: 250px;
+    min-width: fit-content;
+}
+
+.grid-item img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    opacity: .9;
+}
+
+.grid-item:hover {
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+}
+
+.grid-item:hover img {
+    opacity: 1;
+    cursor: url('/img/guitar_blpick.cur'), auto;
+}
+
+.grid-item:hover a {
+    cursor: url('/img/guitar_blpick.cur'), auto;
+}
+
+.grid-item p {
+    display: inline;
+    position: relative;
+    bottom: 7px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1200px) {
+    .item1 {
+        grid-column: 1 / 3;
+    }
+
+    .item4 {
+        grid-column: 1 / 3;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 100%;
+    }
+
+    .item1 {
+        grid-column: inherit;
+    }
+
+    .item4 {
+        grid-column: inherit;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* grid se transforma en flex */
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1px 1px;
+        width: 100%;
+    }
+
+    .grid-item img {
+        display: none;
+    }
+
+    .grid-item a {
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .grid-item {
+        width: 100%;
+        max-width: none;
+        border: 2px solid black;
+    }
+
+    div #titulo {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+
+
+
+/*  Gral y hamburger */
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: url(/fondos/fondo_strato_04.jpg);
+    background-size: cover;
+    /* background-repeat: repeat-y; */
+    background-attachment: fixed;
+    cursor: url('/img/cursor.cur'), default;
+}
+
+h1,
+h2 {
+    /* vertical-align: center; */
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Metal Mania', cursive;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#titulo {
+    color: rgb(48, 48, 48);
+    /* font-size: 120px; */
+    font-size: 15vw;
+    text-align: center;
+    text-shadow: 8px 8px #adadad, -8px -8px rgb(0, 0, 0);
+}
+
+#lema {
+    color: rgb(0, 0, 0);
+    text-shadow: -2px -2px rgb(27, 27, 27);
+    background-color: #222;
+}
+
+
+/*  HAMBURGER NAVBAR */
+
+
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 20px;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* background-color: #00BAF0;    INNECESARIO??  */
+    background: linear-gradient(to left, #111111, #797878);
+    color: white;
+    height: 50px;
+    padding: 1em;
+    z-index: 1;
+    /* la H.navBar quedaba debajo de algunas imgs */
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+nav a:hover {
+    box-sizing: border-box;
+    color: rgba(37, 37, 37, 0.925);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: url('/img/guitar-pick-cur.cur'), auto;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    /* quita las viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+.menu>li {
+    margin: 0 1rem;
+}
+
+.menu-hamb-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: url('/img/guitar-pick-cur.cur'), auto;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-check {
+    display: none;
+}
+
+/* Dibujo 3 líneas de Hamburger */
+.menu-hamb,
+.menu-hamb::before,
+.menu-hamb::after {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 1s;
+    border-radius: 50%;
+}
+
+.menu-hamb::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-hamb::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-check:checked+.menu-hamb-container .menu-hamb::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-check:checked+.menu-hamb-container .menu-hamb {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-check:checked+.menu-hamb-container .menu-hamb::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+
+/* MEDIA QUERIES PARA HAMBURGER NAVBAR */
+
+
+
+@media only screen and (max-width: 600px) {
+
+    #menu-check:not(checked)~.menu li {
+        display: none;
+        transition: 500ms;
+        /* opacity: 0; */
+    }
+
+    #menu-check:checked~.menu li {
+        display: flex;
+        /* opacity: 1; */
+    }
+
+    .menu-hamb-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-check~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        /* transition: height 400ms; */
+    }
+
+    #menu-check:checked~.menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        /* transition: height 400ms; */
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+}
+
+
+
+
+
+/*  Footer */
+
+.flex-container-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: rgb(34, 34, 34);
+    opacity: .8;
+}
+
+.flex-container-footer div {
+    color: aliceblue;
+}

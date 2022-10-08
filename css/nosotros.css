@@ -349,4 +349,37 @@ nav a:hover {
 
 .flex-container-footer div {
     color: aliceblue;
+    padding: 2px;
+}
+
+.icon-redes {
+    display: inline-block;
+    animation: flotar 2s ease-in-out infinite;
+    height: 30px;
+}
+
+.fb {
+    animation-delay: .4s;
+}
+
+.wap {
+    animation-delay: .8s;
+}
+
+.tw {
+    animation-delay: 1s;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

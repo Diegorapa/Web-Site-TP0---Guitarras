@@ -38,11 +38,11 @@
 
 .grid-item:hover img {
     opacity: 1;
-    cursor: url(..img/guitar_blpick.cur), auto;
+    cursor: url(../img/guitar_blpick.cur), auto;
 }
 
 .grid-item:hover a {
-    cursor: url(..img/guitar_blpick.cur), auto;
+    cursor: url(../img/guitar_blpick.cur), auto;
 }
 
 .grid-item p {
@@ -119,6 +119,9 @@
 
 
 /*  Gral y hamburger */
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -126,7 +129,7 @@
 body {
     margin: 0;
     height: 100%;
-    background: url(../fondos/fondo_strato_04.jpg);
+    background: url(../fondos/fondo-guit-01-cut.png);
     background-size: cover;
     /* background-repeat: repeat-y; */
     background-attachment: fixed;
@@ -164,8 +167,80 @@ h2 {
 
 
 
+/* PARRAFOS "NOSOTROS" */
+
+
+
+
+.titulo {
+    font-family: 'Metal Mania', cursive;
+    font-size: 4em;
+    text-shadow: 1px 1px 0 white;
+    text-shadow: -2px -2px 0 white;
+}
+
+.parrNos {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgba(248, 248, 248, 0.4);
+    font-family: 'Uncial Antiqua', cursive;
+    text-shadow: 2px 2px 5px orangered;
+    color: rgb(124, 7, 7);
+    font-size: 1.3em;
+}
+
+.parrNos>.parr1,
+.parrNos>.parr2,
+.parrNos>.parr3 {
+    width: 30vw;
+    min-width: 300px;
+}
+
+.parr1::first-letter {
+    font-size: 3em;
+}
+
+.parr1 {
+    text-align: justify;
+}
+
+.parr2 {
+    text-align: justify;
+    justify-items: center;
+    justify-self: center;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.parr3 {
+    margin-left: auto;
+    margin-right: 0px;
+    text-align: justify;
+}
+
+.parr4 {
+    text-align: center;
+    font-size: 1.4em;
+    animation: fuego 1.5s infinite cubic-bezier(0.5, 0.2, 0.8, 1);
+
+
+}
+
+@keyframes fuego {
+    33% {
+        text-shadow: 10px 10px 20px red;
+    }
+
+    66% {
+        text-shadow: 5px 5px 20px orange;
+    }
+}
 
 /*  HAMBURGER NAVBAR */
+
+
 
 .navBar {
     display: flex;

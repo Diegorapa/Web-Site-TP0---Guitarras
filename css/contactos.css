@@ -38,11 +38,11 @@
 
 .grid-item:hover img {
     opacity: 1;
-    cursor: url(..img/guitar_blpick.cur), auto;
+    cursor: url(../img/guitar_blpick.cur), auto;
 }
 
 .grid-item:hover a {
-    cursor: url(..img/guitar_blpick.cur), auto;
+    cursor: url(../img/guitar_blpick.cur), auto;
 }
 
 .grid-item p {
@@ -194,7 +194,7 @@ nav a:hover {
     color: rgba(37, 37, 37, 0.925);
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    cursor: url(..img/guitar-pick-cur.cur), auto;
+    cursor: url(../img/guitar-pick-cur.cur), auto;
 }
 
 
@@ -215,7 +215,7 @@ nav a:hover {
     display: none;
     height: 100%;
     width: 30px;
-    cursor: url(..img/guitar-pick-cur.cur), auto;
+    cursor: url(../img/guitar-pick-cur.cur), auto;
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;

@@ -185,8 +185,8 @@ h2 {
     border-radius: 20px;
     background-color: rgba(248, 248, 248, 0.4);
     font-family: 'Uncial Antiqua', cursive;
-    text-shadow: 2px 2px 5px orangered;
-    color: rgb(124, 7, 7);
+    text-shadow: 2px 2px 5px rgb(46, 45, 45);
+    color: rgb(0, 0, 0);
     font-size: 1.3em;
 }
 

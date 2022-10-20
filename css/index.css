@@ -340,6 +340,10 @@ nav a:hover {
     padding: 2px;
 }
 
+footer a:hover {
+    cursor: url(../img/guitar-pick-cur.cur), auto;
+}
+
 .icon-redes {
     display: inline-block;
     animation: flotar 2s ease-in-out infinite;

@@ -160,7 +160,7 @@
             console.log("Buscando Tablaturas de", art)
 
 
-            let artistaListo = ('http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + art + '"')
+            let artistaListo = ('https://www.songsterr.com/a/ra/songs/byartists.json?artists="' + art + '"')
             console.log("SOLICITUD: ", artistaListo)
 
 
@@ -185,7 +185,7 @@
 
                             contenido.innerHTML +=
                                 `<div class="listado">
-                                <a href="http://www.songsterr.com/a/wa/song?id=${datos[i].id}" target="_blank">
+                                <a href="https://www.songsterr.com/a/wa/song?id=${datos[i].id}" target="_blank">
                                     Artista: <b>${datos[i].artist.name}</b> -
                                     Canción: <b>${datos[i].title}</b> - (id ${datos[i].id})</a>
                             

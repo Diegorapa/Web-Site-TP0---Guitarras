@@ -9,7 +9,7 @@
     padding: 10px;
     background-color: transparent;
     gap: 1rem;
-    grid-template-rows:1fr 2fr 1.5fr 1.fr;
+    grid-template-rows: 1fr 2fr 1.5fr 1.fr;
     /* border: 2px solid blue; */
 }
 
@@ -112,6 +112,13 @@
     div #titulo {
         margin-top: 0px;
         margin-bottom: 0px;
+    }
+
+    /* API */
+
+    #artista {
+        width: 100%;
+        overflow: hidden;
     }
 }
 
@@ -378,4 +385,63 @@ footer a:hover {
     100% {
         transform: translateY(0);
     }
+}
+
+
+
+/*  API  */
+
+.apiSongsterr {
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 20px;
+    width: 60vw;
+    min-width: 300px;
+    background-color: rgba(171, 230, 248, 0.39);
+}
+
+hr {
+    width: 90%;
+    /* margin: 50px; */
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+.listado {
+    text-align: center;
+}
+
+.listado a {
+    text-decoration: underline;
+}
+
+.btnBusc, input[type="reset"] {
+    border-radius: 5px;
+    border: none;
+    padding: 2px 10px;
+    margin-top: 5px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.btnBusc {
+    font-weight: bolder;
+    background-color: #1668c4;
+}
+
+.btnBusc:hover, input[type="reset"]:hover {
+    opacity: 1;
+}
+
+/* SELECTOR DE ATRIBUTO */
+input[type="reset"] {
+    background-color: #33383d;
+}
+
+.spanArt {
+    font-weight: bolder;
 }

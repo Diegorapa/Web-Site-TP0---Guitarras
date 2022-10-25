@@ -106,6 +106,112 @@
             </div>
 </section>
 
+<br>
+<hr>
+<br>
+
+<!-- API SONGSTERR - BUSCA TABLATURAS SEGUN ARTISTA INGRESADO EN INPUT Y DEVUELVE LOS PRIMEROS 20 RESULTADOS -->
+
+<section>
+    <div class="apiSongsterr">
+
+
+
+        <h1>BUSCADOR DE TABLATURAS (Songsterr)</h1>
+        <hr><br>
+    <h3>Fuente: <a href="https://www.songsterr.com/">---- www.songsterr.com ----</a></h3>
+    <form>
+        <span class="spanArt">Artista o Grupo Musical:</span>
+        <input name="fname" type="text" id="artista" value=""
+            placeholder="Ingrese el nombre del artista (ej: Pink Floyd)">
+        <input type="reset" value="Borrar Todo" onclick="limpiar()">
+    </form>
+
+    <br>
+
+    <div class="container"></div>
+    <button class="btnBusc" onclick="traerDatosAPI()">Buscar Tablaturas</button><br>
+
+    <div id="nroResult"></div>
+    <div id="contenido">
+        <!-- Aquí insertaremos contenido que recuperamos mediante la API -->
+    </div>
+
+
+    <script>
+
+
+        // *********** EVENTLISTENER EVITA QUE TECLA "ENTER" ENVÍE EL FORMULARIO ****************
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=text]').forEach(node => node.addEventListener('keypress', e => {
+                if (e.keyCode == 13) { e.preventDefault(); }
+            }))
+        });
+
+        // *********** FIN EVENTLISTENER ****************
+
+
+
+        // Esta función lee los datos remotos, usando fetch
+        function traerDatosAPI() {
+
+            let art = document.getElementById("artista").value
+            console.log("Buscando Tablaturas de", art)
+
+
+            let artistaListo = ('http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + art + '"')
+            console.log("SOLICITUD: ", artistaListo)
+
+
+            fetch(artistaListo)
+
+                // Cuando ha finalizado la lectura
+                // guardo en datos el texto leido:
+                .then(datos => datos.json()) //res va a guardar el dato mediante el método .json()
+                .then(datos => {
+                    // Y luego copio ese texto en #contenido.
+
+                    if (datos.length == "0") {
+                        document.getElementById("contenido").innerHTML = "";
+                        nroResult.innerHTML = "<br>No se encontraron resultados. <mark>Revise los datos ingresados y el estado del servidor de Songsterr</mark>"
+                    } else {
+
+
+                        nroResult.innerHTML = `<h3>Se obtuvieron  ${datos.length} resultados. No se mostrarán más de 20: </h3><br><br>`
+                        document.getElementById("contenido").innerHTML = "";
+
+                        for (i = 0; i <= 20; i++) {
+
+                            contenido.innerHTML +=
+                                `<div class="listado">
+                                <a href="http://www.songsterr.com/a/wa/song?id=${datos[i].id}" target="_blank">
+                                    Artista: <b>${datos[i].artist.name}</b> -
+                                    Canción: <b>${datos[i].title}</b> - (id ${datos[i].id})</a>
+                            
+                            <br><br>
+                            </div>`
+                        }
+                    }
+                })
+            // .catch(error => {
+            //     nroResult.innerHTML = "<br>No se encontraron resultados. <mark>Revise los datos ingresados y el estado del servidor de Songsterr</mark>"
+            // })
+        }
+    </script>
+
+    <script>
+        function limpiar() {
+            document.getElementById("contenido").innerHTML = "";
+            document.getElementById("nroResult").innerHTML = "";
+        }
+    </script>
+
+
+    </div>
+</section>
+
+
     <!-- FOOTER -->
 
 

@@ -142,6 +142,14 @@ h2 {
     text-align: center;
 }
 
+.clickEscuchar {
+    /* text-align: center; */
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.575);
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    padding-left: 10px;
+}
+
 .logo {
     font-family: 'Metal Mania', cursive;
     margin-top: 0%;

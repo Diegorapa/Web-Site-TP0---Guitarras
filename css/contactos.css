@@ -381,7 +381,7 @@ footer a:hover {
 
 .mapa{
     margin: auto;
-    margin-top: 600px;
+    margin-top: 590px;
     margin-bottom: 100px;
     margin-block-end: 100px;
    top: 130px;
@@ -481,12 +481,6 @@ footer a:hover {
   }
   
   
-  h1{
-    font-size: 39px;  
-    text-align: letf; 
-    padding-bottom: 20px; 
-    color: #070506;
-  }
   
   
   h3{
@@ -496,11 +490,7 @@ footer a:hover {
   }
   
   
-  p{
-    font-size: 14px; 
-    color: #0e0e0e; 
-  }
-  
+ 
   
   ::-webkit-input-placeholder {
    color: #a8a8a8;
